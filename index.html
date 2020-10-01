@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper Scissors</title>
+  </head>
+  <body>
+    <h1>Rock, Paper, Scissors</h1>
+    <script>
+        var continue_game = true;
+        var rockPaperScissors = ["rock", "paper", "scissors"];
+        var num;
+        var win = 0;
+        var loss = 0;
+        var tie = 0;
+        var counter = 0;
+        while (continue_game)  {
+            counter++;
+            num = Math.floor(Math.random() * 3);
+            console.log(num);
+            var computerChoice = rockPaperScissors[num]
+            console.log(computerChoice);
+            var userchoice = "";
+            do {  
+                userchoice = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
+            }
+            while (rockPaperScissors.indexOf(userchoice) === -1)
+            console.log(userchoice);
+            var result = "defined"
+            if (computerChoice == userchoice) {result = "tied with the computer. They will take over and destroy us all"}
+            else if (userchoice == "rock") {
+                if (computerChoice = "paper") {result = "lose"}
+                else if (computerChoice == "scissors") {result = "won"}
+            } else if (userchoice == "paper") {  
+                if (computerChoice == "scissors") {result = "lose"}
+                if (computerChoice == "rock") {result = "won"}
+            }
+            else if (userchoice == "scissors") { 
+                if (computerChoice == "rock") {result = "lose" }		
+                else if (computerChoice == "paper") {result = "won"}
+            }
+            console.log(result);
+            alert("The computer chose " + computerChoice + " you " + result);
+            continue_game = confirm("Play Again");       
+            }      
+    </script>
+  </body>
+</html>
