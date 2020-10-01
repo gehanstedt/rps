@@ -66,12 +66,12 @@
             }
             console.log(result);
 
-            if (counter == 10) {
-                alert ("Game status:  Wins - " + win + " Losses: " + loss + " Ties: " + tie);
+            if (counter % 10 == 0) {
+                alert ("Game status:  Wins: " + win + " Losses: " + loss + " Ties: " + tie);
             }
 
             alert("The computer chose " + computerChoice + " you " + result);
-            continue_game = confirm("Play Again - you've played " + counter + "times so far.");       
+            continue_game = confirm("Play Again - you've played " + counter + " times so far.");       
             }      
     </script>
   </body>
