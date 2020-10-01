@@ -27,21 +27,51 @@
             while (rockPaperScissors.indexOf(userchoice) === -1)
             console.log(userchoice);
             var result = "defined"
-            if (computerChoice == userchoice) {result = "tied with the computer. They will take over and destroy us all"}
-            else if (userchoice == "rock") {
-                if (computerChoice = "paper") {result = "lose"}
-                else if (computerChoice == "scissors") {result = "won"}
-            } else if (userchoice == "paper") {  
-                if (computerChoice == "scissors") {result = "lose"}
-                if (computerChoice == "rock") {result = "won"}
+            if (computerChoice == userchoice) {
+                result = "tied with the computer. They will take over and destroy us all";
+                tie++;
             }
+            else if (userchoice == "rock") {
+                if (computerChoice = "paper") {
+                    result = "lose";
+                    loss++;
+                }
+                else if (computerChoice == "scissors") {
+                    result = "won";
+                    win++;
+                }
+            } 
+            
+            else if (userchoice == "paper") {  
+                if (computerChoice == "scissors") {
+                    result = "lose";
+                    loss++;
+                }
+                if (computerChoice == "rock") {
+                    result = "won";
+                    win++;
+                }
+            }
+
             else if (userchoice == "scissors") { 
-                if (computerChoice == "rock") {result = "lose" }		
-                else if (computerChoice == "paper") {result = "won"}
+                if (computerChoice == "rock") {
+                    result = "lose";
+                    loss++;
+                }
+
+                else if (computerChoice == "paper") {
+                    result = "won";
+                    win++;
+                }
             }
             console.log(result);
+
+            if (counter == 10) {
+                alert ("Game status:  Wins - " + win + " Losses: " + loss + " Ties: " + tie);
+            }
+
             alert("The computer chose " + computerChoice + " you " + result);
-            continue_game = confirm("Play Again");       
+            continue_game = confirm("Play Again - you've played " + counter + "times so far.");       
             }      
     </script>
   </body>
